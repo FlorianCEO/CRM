@@ -8,18 +8,9 @@ class ProspectsController < ApplicationController
     @prospect = Prospect.new
   end
 
-  def directcreate
-    @prospect = Prospect.new(entreprise_params)
-
-    if @prospect.save
-      redirect_to @prospect
-    else
-      render 'new'
-    end
-  end
-
   def create
-    @entreprise = Entreprise.find(params[:entreprise_id])
+    entreprise_id = params[:entreprise_id].present? ?  params[:entreprise_id] : params[:prospect][:entreprise_id]
+    @entreprise = Entreprise.find(entreprise_id)
     @prospect = @entreprise.prospects.create(params[:prospect].permit(:full_name, :email))
 
     redirect_to entreprise_path(@entreprise)
