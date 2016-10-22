@@ -17,13 +17,11 @@ class ProspectsController < ApplicationController
   end
 
   def destroy
-    @entreprise = Entreprise.find(params[:entreprise_id])
-    @prospect = @entreprise.prospects.find(params[:id])
+    @prospect = Prospect.find(params[:id])
     @prospect.destroy
 
-    redirect_to entreprise_path(@entreprise)
+    redirect_to entreprises_path(@entreprise)
   end
-
 end
 
 

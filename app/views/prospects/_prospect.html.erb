@@ -6,9 +6,9 @@
     <p class="comment_name">Email :</p>
     <p class="comment_body"><%= prospect.email %></p><br>
 
+    <%= link_to "Remove prospect", prospect_path(:id => prospect.id), :confirm => 'Are you sure?', :method => :delete %>
+
   </div>
   <br>
-  </p>
-
 
 </div>

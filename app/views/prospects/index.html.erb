@@ -3,10 +3,11 @@
   <h2>Listes de tous les prospects:</h2><br>
     <% @prospects.each do |prospect| %>
       <p><strong>Nom du contact</strong></p>
-      <p><%= prospect.full_name %> </p>
+      <p><%= prospect.full_name %></p>
       <p><strong>Email</strong></p>
       <p><%= prospect.email %> </p>
       <br>
       <hr>
     <% end %>
+
 </div>
