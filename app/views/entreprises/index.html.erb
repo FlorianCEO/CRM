@@ -1,0 +1,10 @@
+
+  <% @entreprises.each do |entreprise| %>
+    <div class="post_wrapper">
+      <h4 class="title"><%= link_to entreprise.name, entreprise %></h4>
+      <p class="date_and_author"><%= entreprise.created_at.strftime("%B, %d, %Y") %> </p>
+    </div>
+  <% end %>
+
+
+

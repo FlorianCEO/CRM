@@ -1,0 +1,35 @@
+<%= form_for @entreprise do |f| %>
+  <% if @entreprise.errors.any? %>
+    <div id="errors">
+      <h2><%= pluralize(@entreprise.errors.count, "erreurs") %> détectées avant de sauvegarder votre entreprise</h2>
+      <ul>
+        <% @entreprise.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+  <br>
+  <%= f.label :siret %><br>
+  <%= f.text_field :siret %><br>
+  <br>
+  <%= f.label :numtva %><br>
+  <%= f.text_field :numtva %><br>
+  <br>
+  <%= f.label :adresse %><br>
+  <%= f.text_field :adresse %><br>
+  <br>
+  <%= f.label :tel %><br>
+  <%= f.text_field :tel %><br>
+  <br>
+
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+  <% end %>

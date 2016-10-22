@@ -1,0 +1,55 @@
+<%= form_for :prospects, url: prospects_path do |f| %>
+
+  <%= f.fields_for :entreprises do |ff| %>
+    <h2>Information sur l'entreprise du prospect</h2>
+
+  <p>
+     <%= f.label :name %> <br>
+     <%= f.text_field :name %><br>
+  </p><br>
+
+  <p>
+     <%= f.label :email %> <br>
+     <%= f.text_field :email %><br>
+  </p><br>
+
+    <p>
+     <%= f.label :tel %> <br>
+     <%= f.text_field :tel %><br>
+  </p><br>
+
+    <p>
+     <%= f.label :siret %> <br>
+     <%= f.text_field :siret %><br>
+  </p><br>
+
+    <p>
+     <%= f.label :numtva %> <br>
+     <%= f.text_field :numtva %><br>
+  </p><br>
+  <% end %>
+
+  <h2>Information sur le prospect</h2>
+  <p>
+     <%= f.label :full_name %> <br>
+     <%= f.text_field :full_name %><br>
+  </p><br>
+
+  <p>
+     <%= f.label :email %> <br>
+     <%= f.text_field :email %><br>
+  </p><br>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
+
+
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+<div id="post_content">
+  <h2> Détails de l'entreprise <strong> <%= @entreprise.name %> </strong> </h2>
+
+  <p class="date">Créé il y a <%= time_ago_in_words(@entreprise.created_at) %>
+    <%= link_to '| Modifier l\'entreprise', edit_entreprise_path(@entreprise) %>
+    <%= link_to '| Supprimer', entreprise_path(@entreprise), method: :delete, data: { confirm: 'êtes-vous certain de supprimer ce contact ?'} %>
+  </p>
+  <br>
+  <hr>
+  <br>
+
+  <p class="date"><strong>Numéro de Siret :</strong> </p>
+  <p class="body"><%= @entreprise.siret %> </p>
+
+  <p class="date"><strong>Numéro de TVA :</strong></p>
+  <p class="body"><%= @entreprise.numtva %> </p>
+
+  <p class="date"><strong>Adresse :</strong></p>
+  <p class="body"><%= @entreprise.adresse %> </p>
+
+  <p class="date"><strong>Téléphone fixe :</strong></p>
+  <p class="body"><%= @entreprise.tel %> </p>
+
+
+  <div id="comments">
+    <h2><%= @entreprise.prospects.count %> prospects ajoutés</h2>
+    <%= render @entreprise.prospects %>
+
+    <h3>Ajouter un prospect :</h3>
+    <%= render "prospects/form" %>
+  </div>
+
+</div>
+
+
+
+
